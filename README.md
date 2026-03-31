@@ -1,19 +1,53 @@
-# The Ultimate Spring Boot Course
+# 🛒 Store
 
-This repository contains the starter project for Part 2 of my Spring Boot course:
+A Spring Boot e-commerce REST API with JWT authentication, cart management, order processing, and Stripe payment integration.
 
-[https://tabrizgulmammadov.com/p/spring-boot-building-apis](https://tabrizgulmammadov.com/p/spring-boot-building-apis)
+## Tech Stack
 
-## About this Repository 
+- **Java 17+** / Spring Boot
+- **Spring Security** + JWT
+- **JPA / Hibernate** + MySQL
+- **Flyway** – database migrations
+- **MapStruct** – DTO mapping
+- **Stripe** – payment gateway
 
-This project is based on the final project from Part 1 of the course, but I’ve cleaned it up and removed unnecessary playground code so we can focus on building APIs in Part 2.
+## Features
 
-You’ll be cloning this repository and coding along with me as we extend the project.
+- 🔐 JWT-based auth (register, login, change password)
+- 🛍️ Product catalog with categories
+- 🛒 Cart management (add, update, remove items)
+- 📦 Order creation and tracking
+- 💳 Stripe checkout & webhook handling
+- 👤 User profile management
+- 🛡️ Role-based access control (admin/user)
 
-To get started, clone the repository to your local machine:
+## Getting Started
 
-```sh
-git clone https://github.com/mosh-hamedani/spring-api-starter
+### Prerequisites
 
-cd spring-api
+- Java 21
+- MySQL
+- Maven
+
+### Run
+```bash
+# Dev profile
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
+
+Configure your environment variables in `application-dev.yaml`:
+```yaml
+spring.datasource.url: ...
+spring.datasource.username: ...
+spring.datasource.password: ...
+jwt.secret: ...
+stripe.secret-key: ...
+```
+
+## Database Migrations
+
+Managed by Flyway under `src/main/resources/db/migration`.
+
+## License
+
+MIT
